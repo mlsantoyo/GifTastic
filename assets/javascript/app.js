@@ -20,9 +20,9 @@ function displayGif() {
 
             var gifs = $("<img/>");
             gifs.attr("src", results[i].images.fixed_height.url);
-            // gifs.attr("data-still", results[i].images.fixed_height_still.url);
-            // gifs.attr("data-animate", results[i].images.fixed_height.url);
-            // gifs.attr("data-state", "still");
+            gifs.attr("data-still", results[i].images.fixed_height_still.url);
+            gifs.attr("data-animate", results[i].images.fixed_height.url);
+            gifs.attr("data-state", "still");
 
 
             gifDiv.prepend(p);
