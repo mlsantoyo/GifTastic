@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-      <title>GifTastic</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GifTastic Movies</title>
 </head>
+
 <body>
-<button data-animal="cat">Meow</button>
-<button data-animal="dog">Woof</button>
-<button data-animal="bird">Chirp</button>
+  <!-- Gifs go here -->
+    <div id="gifs"></div>
 
-<div id = "gifsGoHere"></div>
+    <!-- Buttons go here -->
+    <div id="buttons-view"></div>
 
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
- <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <form id="movie-form">
+      <label for="movie-input">Add your favorite movie</label>
+      <input type="text" id="movie-input"><br>
+      <input id="add-movie" type="submit" value="Add your favorite">
+    </form>
+
+
+  
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
+    
+  
 </body>
+
 </html>

@@ -1,5 +1,10 @@
 body {
 	font-family: Arial, "Gergia", "Times New Roman";
-	background: #777777;
+	background: #777777
+	width=1204px;
 }
 
+#showGifs{
+float: left;
+
+}
