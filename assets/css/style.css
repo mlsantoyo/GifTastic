@@ -1,10 +1,13 @@
 body {
 	font-family: Arial, "Gergia", "Times New Roman";
 	background: #777777
-	width=1204px;
+	
 }
 
-#showGifs{
+.item{
 float: left;
+margin: 30px;
+padding: 20px;
 
 }
+

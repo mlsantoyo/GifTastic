@@ -1,7 +1,7 @@
 var movies = ["True Romance", "Pulp Fiction", "Bad Lieutenant", "Goodfellas"];
 
 function displayGif() {
-      var movie = $(this).attr("data-movie");
+      var movie = $(this).attr("data-name");
       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + movie + "&api_key=dc6zaTOxFJmzC&limit=10";
 
       $.ajax({
@@ -18,8 +18,12 @@ function displayGif() {
 
             var p = $("<p>").text("Rating: " + rating);
 
-            var gifs = $("<img>");
+            var gifs = $("<img/>");
             gifs.attr("src", results[i].images.fixed_height.url);
+            // gifs.attr("data-still", results[i].images.fixed_height_still.url);
+            // gifs.attr("data-animate", results[i].images.fixed_height.url);
+            // gifs.attr("data-state", "still");
+
 
             gifDiv.prepend(p);
             gifDiv.prepend(gifs);
@@ -28,9 +32,26 @@ function displayGif() {
             $("#gifs-appear-here").prepend(gifDiv);
           }
         });
-    };
+    }
 
+       
+      $(".item").on("click", function() {
+      
+      var state = $(this).attr("data-state");
+      console.log(state); 
+      
 
+      // Make the Gif either animated or still depending on the "data-state" value
+      if (state ==="still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+
+     } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+
+     }
+    });
 
  
     function renderButtons() {
@@ -41,7 +62,7 @@ function displayGif() {
           // Adding a class of movie to our button
           a.addClass("movie");
           // Adding a data-attribute
-          a.attr("data-movie", movies[i]);
+          a.attr("data-name", movies[i]);
           // Providing the initial button text
           a.text(movies[i]);
           // Adding the button to the buttons-view div
